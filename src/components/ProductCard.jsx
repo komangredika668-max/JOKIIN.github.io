@@ -1,34 +1,29 @@
 import { Link } from "react-router-dom";
-import { useCart } from "../context/CartContext";
 
-export default function ProductCard({ p }) {
-  const { addToCart } = useCart();
-
+export default function ProductCard({ name, image }) {
   return (
     <div className="border-4 rounded-lg p-4 shadow hover:shadow-lg">
 
-      {/* Gambar Produk */}
+      {/* Logo Game */}
       <img
-        src={p.img}
-        alt={p.name}
-        className="w-full h-56 object-cover rounded-lg mb-3"
+        src={image}
+        alt={name}
+        className="w-full object-cover rounded-lg mb-3"
       />
 
-      <h2 className="font-semibold">
-        {p.name}
+      {/* Nama Game */}
+      <h2 className="font-semibold text-xl">
+        {name}
       </h2>
 
-      <p className="text-gray-600">
-        Rp {p.price.toLocaleString("id-ID")}
-      </p>
-
+      {/* Tombol Lihat Jasa */}
       <Link
-        to={`/product/${p.slug}`}   
-        state={p}
-        className="text-white hover:underline mt-2 border w-[100px] h-[33px] rounded-md block text-xl text-center "
+        to="/ProductDetail"
+        className="text-blue-500 hover:underline mt-2 border w-[120px] h-[33px] rounded-md block text-xl text-center"
       >
         Lihat Jasa
       </Link>
+
     </div>
   );
 }

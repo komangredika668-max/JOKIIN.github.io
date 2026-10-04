@@ -9,6 +9,7 @@ import AdminDashboard from './pages/adminpages/AdminDashboard';
 import AboutPage from './pages/adminpages/AboutPage';
 import Cart from './pages/frontpages/Pesanan';
 import Aboutme from './pages/frontpages/Aboutme';
+import JasaJoki from './pages/frontpages/JasaJoki';
 
 
 function App() { 
@@ -40,9 +41,10 @@ function App() {
   
 
   </Route>
-  <Route path="aboutme" element={<Aboutme/>} />
+  <Route path="/aboutme" element={<Aboutme/>} />
 
   {/* Detail Produk */}
+  <Route path="/JasaJoki" element={<JasaJoki />}/>
   <Route path="/product/:id" element={<ProductDetail />} />
   
   <Route path="/Pesanan" element={<Cart />} />

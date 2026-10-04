@@ -17,28 +17,36 @@ export default function Navbar() {
 </div>
 
       <div className="flex gap-12 text-lg font-semibold">
-        <Link
+         <Link
           to="/"
-          onClick={() =>
+           onClick={() =>
             window.scrollTo({
               top: 0,
               behavior: "smooth",
             })
           }
-          className="hover:text-gray-500 transition"
+          className={`transition ${
+            location.pathname === "/"
+              ? "text-blue-400"
+              : "text-white hover:text-gray-500"
+          }`}
         >
           Home
         </Link>
 
            <Link
-          to="/dashboard"
+          to="/JasaJoki"
           onClick={() =>
             window.scrollTo({
               top: 0,
               behavior: "smooth",
             })
           }
-          className="hover:text-gray-500 transition"
+          className={`transition ${
+            location.pathname === "/JasaJoki"
+              ? "text-blue-400"
+              : "text-white hover:text-gray-500"
+          }`}
         >
           Jasa Joki
         </Link>

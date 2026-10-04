@@ -1,5 +1,6 @@
 import { useCart } from "../../context/CartContext";
 import Navbar from "../../components/Navbar";
+import Footer from "../../components/Footer";
 
 export default function Cart() {
   const { cart, updateQty, removeFromCart } = useCart();
@@ -9,7 +10,7 @@ export default function Cart() {
 
       {/* Navbar */}
       <Navbar />
-
+      <main className="flex-1">
       {cart.length === 0 ? (
         <div className="p-6 text-center text-white text-xl">
           Belum ada pesanan
@@ -70,8 +71,12 @@ export default function Cart() {
               </div>
             ))}
           </div>
+          
         </div>
+        
       )}
+      </main>
+      <Footer/>
 
     </div>
   );
