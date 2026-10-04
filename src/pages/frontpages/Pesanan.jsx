@@ -5,18 +5,18 @@ export default function Cart() {
   const { cart, updateQty, removeFromCart } = useCart();
 
   return (
-    <div className="min-h-screen ">
+    <div className="flex flex-col min-h-screen bg-gradient-to-r from-[#8b8b50] via-[#484351] to-[#201b29]">
 
       {/* Navbar */}
       <Navbar />
 
       {cart.length === 0 ? (
-        <div className="p-6 text-center text-gray-600">
+        <div className="p-6 text-center text-white text-xl">
           Belum ada pesanan
         </div>
       ) : (
         <div className="p-6">
-          <h1 className="text-2xl font-bold mb-4">
+          <h1 className="text-2xl font-bold mb-4 text-white">
             Pesanan Anda
           </h1>
 

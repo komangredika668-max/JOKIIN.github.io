@@ -5,7 +5,7 @@ export default function ProductCard({ p }) {
   const { addToCart } = useCart();
 
   return (
-    <div className="border rounded-lg p-4 shadow hover:shadow-lg">
+    <div className="border-4 rounded-lg p-4 shadow hover:shadow-lg">
 
       {/* Gambar Produk */}
       <img

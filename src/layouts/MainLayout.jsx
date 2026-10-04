@@ -25,14 +25,13 @@ export default function MainLayout() {
     return () => clearInterval(interval);
   }, []);
   return (
-    <div className="flex flex-col min-h-screen bg-gradient-to-r from-[#dadaa0] via-[#484351] to-[#403B4A]">
-      {/* Header/Navbar */}
+    <div className="flex flex-col min-h-screen bg-gradient-to-r from-[#8b8b50] via-[#484351] to-[#201b29] ">
+      {/* Header Navbar */}
       <Navbar />
-
-      <div
-        className="overflow-hidden flex justify-center items-center mx-20 h-[450px] mt-12 rounded-xl relative drop-shadow-md"
+                  <div className="h-full mx-[80px] bg-gradient-to-r from-[#6b6b47] via-[#484351] to-[#292436]">
+      <div className="overflow-hidden flex justify-center items-center mx-20 h-[450px] mt-12 rounded-xl relative drop-shadow-md"
       >
-        {/* Background Images */}
+        {/* Bg-Image */}
         {backgrounds.map((bg, index) => (
           <div
             key={bg}
@@ -67,11 +66,12 @@ export default function MainLayout() {
       <main className="flex-1 p-12 text">
         <Outlet />
       </main>
-
+</div>
       {/* Footer */}
       <footer className="bg-gray-800 text-white text-center p-4">
         <p>© 2025 E-Commerce Simple App | Version 1.0</p>
       </footer>
-    </div>
+      </div>
+
   );
 }

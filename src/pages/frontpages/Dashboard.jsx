@@ -4,7 +4,8 @@ import ProductCard from "../../components/ProductCard";
 export default function Dashboard() {
   return (
     <div className="px-5 mx-4">
-      <div className="border-none px-6 w-[450px] h-[105px] rounded-xl mt-4 bg-[#64625A] text-white">
+      <div className="h-[40px] rounded-xl bg-[#28242D] text-white"></div>
+      <div className="border-none px-6 w-[450px] h-[105px] rounded-xl mt-4 bg-[#28242D] text-white ">
       <h1 className="text-3xl font-bold mb-2 pt-4">
         Game yang Tersedia 
       </h1>

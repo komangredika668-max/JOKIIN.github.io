@@ -3,7 +3,7 @@ import logo from "../assets/J.jpg";
 
 export default function Navbar() {
   return (
-    <nav className="bg-white text-black white px-20 py-4 flex justify-between items-center border-b-2 sticky top-0 z-50 backdrop-blur-md bg-opacity-70">
+    <nav className="bg-[#28242D] text-white border-none px-20 py-4 flex justify-between items-center border-b-2 sticky top-0 z-50 backdrop-blur-md bg-opacity-70">
 
       <div className="flex items-center">
   <img
