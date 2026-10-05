@@ -2,7 +2,8 @@ import { Link } from "react-router-dom";
 
 export default function ProductCard({ name, image }) {
   return (
-    <div className="border-4 rounded-lg p-4 shadow hover:shadow-lg">
+    
+    <div className="border-2 rounded-lg p-4 shadow hover:shadow-lg h-[320px] w-[250px]">
 
       {/* Logo Game */}
       <img
@@ -18,7 +19,7 @@ export default function ProductCard({ name, image }) {
 
       {/* Tombol Lihat Jasa */}
       <Link
-        to="/ProductDetail"
+        to="/JasaJoki"
         className="text-blue-500 hover:underline mt-2 border w-[120px] h-[33px] rounded-md block text-xl text-center"
       >
         Lihat Jasa
