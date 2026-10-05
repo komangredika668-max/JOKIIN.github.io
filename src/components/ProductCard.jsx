@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 export default function ProductCard({ name, image }) {
   return (
     
-    <div className="border-2 rounded-lg p-4 shadow hover:shadow-lg h-[320px] w-[250px]">
+    <div className="border-2 rounded-lg p-4 shadow hover:shadow-lg h-[320px] w-[250px] overflow-hidden">
 
       {/* Logo Game */}
       <img

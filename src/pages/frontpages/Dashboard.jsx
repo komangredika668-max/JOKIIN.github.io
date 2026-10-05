@@ -60,24 +60,69 @@ export default function Dashboard() {
           name="Genshin Impact"
           image={gi}
         />
-        </div>
-        <div className="text-white mt-[12px]">
+      </div>
+      <div className="text-white mt-[12px]">
         <h1 className="text-[45px] font-bold mb-2 pt-4">
-          Game yang Tersedia
+          Layanan Populer
         </h1>
 
         <p className="text-[20px] mb-5 font-semibold">
-          Pilih game favoritmu untuk melihat daftar layanan
+          Layanan Joki Favorit Pilihan Gamers
         </p>
-        <div className="flex justify-center h-[400px] gap-[30px] items-center px-[30px] rounded-xl drop-shadow-md text-white bg-gradient-to-r from-[#4b4b30] via-[#2e2a36] to-[#201c29]">
-          <div className="border rounded-xl h-[260px] w-[400px]">
-          <div className="border-none h-[40px] w-[120px] bg-black rounded-[8px] mt-4 ml-4 flex items-center justify-center">
-          <span>Paling Laris</span>
+        <div className="flex justify-center overflow-hidden h-[400px] gap-[30px] items-center px-[30px] rounded-xl drop-shadow-md text-white bg-gradient-to-r from-[#4b4b30] via-[#2e2a36] to-[#201c29]">
+          {/*Border 1 */}
+          <div className="border rounded-xl h-[320px] w-[380px]">
+            <div className="border-none h-[40px] w-[130px] bg-black font-semibold rounded-[8px] mt-6 ml-6 flex items-center justify-center">
+              <span>Paling Laris</span>
+            </div>
+            <div className="px-6">
+              <div className="mt-2 font-bold text-[30px]">
+                <h1>Story Progres</h1>
+              </div>
+              <div className="mt-2 text-blue-100">
+                <p>Penuntasan misi story utama & sampingan cepat tanpa lelah, anda bisa request penyelesaian story sesuai dengan keinginan anda.</p>
+              </div>
+              <div className="mt-4 py-2 text-[18px] text-blue-100 border-t">
+                <p>Harga paketan atau menyesuaikan dengan request anda</p>
+              </div>
+            </div>
           </div>
+          {/*Border 2 */}
+          <div className="border rounded-xl h-[320px] w-[380px]">
+            <div className="border-none h-[40px] w-[130px] bg-black font-semibold rounded-[8px] mt-6 ml-6 flex items-center justify-center">
+              <span>Paling Laris</span>
+            </div>
+            <div className="px-6">
+              <div className="mt-2 font-bold text-[30px]">
+                <h1>Story Progres</h1>
+              </div>
+              <div className="mt-2 text-blue-100">
+                <p>Penuntasan misi story utama & sampingan cepat tanpa lelah, anda bisa request penyelesaian story sesuai dengan keinginan anda.</p>
+              </div>
+              <div className="mt-4 py-2 text-[18px] text-blue-100 border-t">
+                <p>Harga paketan atau menyesuaikan dengan request anda</p>
+              </div>
+            </div>
           </div>
-
+          {/*Border 3 */}
+          <div className="border rounded-xl h-[320px] w-[380px]">
+            <div className="border-none h-[40px] w-[130px] bg-black font-semibold rounded-[8px] mt-6 ml-6 flex items-center justify-center">
+              <span>Paling Laris</span>
+            </div>
+            <div className="px-6">
+              <div className="mt-2 font-bold text-[30px]">
+                <h1>Story Progres</h1>
+              </div>
+              <div className="mt-2 text-blue-100">
+                <p>Penuntasan misi story utama & sampingan cepat tanpa lelah, anda bisa request penyelesaian story sesuai dengan keinginan anda.</p>
+              </div>
+              <div className="mt-4 py-2 text-[18px] text-blue-100 border-t">
+                <p>Harga paketan atau menyesuaikan dengan request anda</p>
+              </div>
+            </div>
           </div>
         </div>
-        </div>
+      </div>
+    </div>
   );
 }
