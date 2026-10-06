@@ -71,8 +71,8 @@ export default function Dashboard() {
         </p>
         <div className="flex justify-center overflow-hidden h-[400px] gap-[30px] items-center px-[30px] rounded-xl drop-shadow-md text-white bg-gradient-to-r from-[#4b4b30] via-[#2e2a36] to-[#201c29]">
           {/*Border 1 */}
-          <div className="border rounded-xl h-[320px] w-[380px]">
-            <div className="border-none h-[40px] w-[130px] bg-black font-semibold rounded-[8px] mt-6 ml-6 flex items-center justify-center">
+          <div className="border-2 rounded-xl h-[320px] w-[380px]">
+            <div className="border border-purple-400 text-purple-200 bg-purple-500/20 h-[40px] w-[130px] font-semibold rounded-[8px] mt-6 ml-6 flex items-center justify-center">
               <span>Paling Laris</span>
             </div>
             <div className="px-6">
@@ -82,41 +82,41 @@ export default function Dashboard() {
               <div className="mt-2 text-blue-100">
                 <p>Penuntasan misi story utama & sampingan cepat tanpa lelah, anda bisa request penyelesaian story sesuai dengan keinginan anda.</p>
               </div>
-              <div className="mt-4 py-2 text-[18px] text-blue-100 border-t">
+              <div className="mt-4 py-2 text-[18px] text-blue-100 border-t border-white/10">
                 <p>Harga paketan atau menyesuaikan dengan request anda</p>
               </div>
             </div>
           </div>
           {/*Border 2 */}
-          <div className="border rounded-xl h-[320px] w-[380px]">
-            <div className="border-none h-[40px] w-[130px] bg-black font-semibold rounded-[8px] mt-6 ml-6 flex items-center justify-center">
-              <span>Paling Laris</span>
+          <div className="border-2 rounded-xl h-[320px] w-[380px]">
+            <div className="border border-emerald-400 text-emerald-200 h-[40px] w-[180px] bg-emerald-500/20 font-semibold rounded-[8px] mt-6 ml-6 flex items-center justify-center">
+              <span>Harian & Mingguan</span>
             </div>
             <div className="px-6">
               <div className="mt-2 font-bold text-[30px]">
-                <h1>Story Progres</h1>
+                <h1>Farming Material</h1>
               </div>
               <div className="mt-2 text-blue-100">
                 <p>Penuntasan misi story utama & sampingan cepat tanpa lelah, anda bisa request penyelesaian story sesuai dengan keinginan anda.</p>
               </div>
-              <div className="mt-4 py-2 text-[18px] text-blue-100 border-t">
+              <div className="mt-4 py-2 text-[18px] text-blue-100 border-t border-white/10">
                 <p>Harga paketan atau menyesuaikan dengan request anda</p>
               </div>
             </div>
           </div>
           {/*Border 3 */}
-          <div className="border rounded-xl h-[320px] w-[380px]">
-            <div className="border-none h-[40px] w-[130px] bg-black font-semibold rounded-[8px] mt-6 ml-6 flex items-center justify-center">
-              <span>Paling Laris</span>
+          <div className="border-2 rounded-xl h-[320px] w-[380px]">
+              <div className="border h-[40px] w-[130px] border-red-400 text-red-200 bg-red-500/20 font-semibold rounded-[8px] mt-6 ml-6 flex items-center justify-center">
+              <span>Progres</span>
             </div>
             <div className="px-6">
               <div className="mt-2 font-bold text-[30px]">
-                <h1>Story Progres</h1>
+                <h1>Explorasi</h1>
               </div>
               <div className="mt-2 text-blue-100">
-                <p>Penuntasan misi story utama & sampingan cepat tanpa lelah, anda bisa request penyelesaian story sesuai dengan keinginan anda.</p>
+                <p>Layanan explorasi berbagai area di dalam game, temukan chest, selesaikan puzzle, mengumpulkan berbagai item dan reward untuk mengingkatkan progres explorasi.</p>
               </div>
-              <div className="mt-4 py-2 text-[18px] text-blue-100 border-t">
+              <div className="mt-4 py-2 text-[18px] text-blue-100 border-t border-white/10">
                 <p>Harga paketan atau menyesuaikan dengan request anda</p>
               </div>
             </div>

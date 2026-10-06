@@ -3,7 +3,7 @@ import logo from "../assets/J.jpg";
 
 export default function Navbar() {
   return (
-    <nav className="bg-[#28242D] text-white border-none px-20 py-4 flex justify-between items-center border-b-2 sticky top-0 z-50 backdrop-blur-md bg-opacity-70">
+    <nav className="bg-[#28242D] text-white border-none px-20 py-4 flex justify-between items-center border-b-2 sticky top-0 z-50 backdrop-blur-md bg-opacity-70">  
 
       <div className="flex items-center">
   <img
@@ -59,7 +59,11 @@ export default function Navbar() {
               behavior: "smooth",
             })
           }
-          className="hover:text-gray-500 transition"
+          className={`transition ${
+            location.pathname === "/Pesanan"
+              ? "text-blue-400"
+              : "text-white hover:text-gray-500"
+          }`}
         >
           Pesanan
         </Link>
@@ -72,7 +76,11 @@ export default function Navbar() {
               behavior: "smooth",
             })
           }
-          className="hover:text-gray-500 transition"
+          className={`transition ${
+            location.pathname === "/aboutme"
+              ? "text-blue-400"
+              : "text-white hover:text-gray-500"
+          }`}
         >
           Tentang Kami
         </Link>

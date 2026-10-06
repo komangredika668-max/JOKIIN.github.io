@@ -1,128 +1,281 @@
 import { useState } from "react";
-import { useLocation, useParams } from "react-router-dom";
+import { useParams, useLocation } from "react-router-dom";
 import Navbar from "../../components/Navbar";
-
-export default function ProductDetail() { 
-  {/* Mengambil ID produk dari URL */} 
-  const { id } = useParams(); 
-  //mengambil state yang dikirim dari link
+import { products } from "../../utils/data";
+export default function ProductDetail() {
+  const { id } = useParams();
   const location = useLocation();
-  //state adalah objek produk yang dikirim dari link
-  const p = location.state;
 
-  //state baru untuk menambahkan interaksi rating dan review
-  const [rating, setRating] = useState(0);
-  const [review, setReview] = useState("");
-  const [reviews, setReviews] = useState([]);
+  // Mencari game berdasarkan ID
+  const product =
+    products.find((item) => item.id === Number(id)) ||
+    location.state;
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!rating || !review.trim()) return;
+  // Menyimpan layanan yang dipilih
+  const [selectedService, setSelectedService] = useState(
+    product?.services?.[0] || null
+  );
 
-    const newReview = {
-      id: Date.now(),
-      rating,
-      review,
-    };
-    setReviews([...reviews, newReview]);
-    setRating(0);
-    setReview("");
+  // Menyimpan target yang dipilih
+  const [selectedTarget, setSelectedTarget] = useState(null);
+
+  // Input email
+  const [email, setEmail] = useState("");
+
+  // Input password
+  const [password, setPassword] = useState("");
+
+  // Catatan tambahan
+  const [note, setNote] = useState("");
+
+  // Ketika jenis layanan berubah
+  const handleServiceChange = (e) => {
+    const serviceId = Number(e.target.value);
+
+    const service = product.services.find(
+      (item) => item.id === serviceId
+    );
+
+    setSelectedService(service);
+
+    // Reset target ketika layanan berubah
+    setSelectedTarget(null);
   };
 
-  return ( 
-    <div>
-    <Navbar />
+  // Ketika target dipilih
+  const handleTargetChange = (e) => {
+    const targetId = Number(e.target.value);
 
-    <div className= "p-6">
-      <div className="flex gap-6 items-start">
-        {/* Bagian Kiri: Detail Produk & User Reviews */}
-        <section className="flex-1 space-y-6">
-          {/* Box Detail Produk */}
-          <div className="border border-gray-400 rounded-lg p-4">
-            <h1 className="text-xl font-bold">{p.name}</h1>
-            <p className="mt-2">{p.price}</p>
-          </div>
+    const target = selectedService.targets.find(
+      (item) => item.id === targetId
+    );
 
-          {/* Bagian Daftar Review Pengguna */}
-          <div>
-            <h2 className="text-lg font-bold mb-3">User Reviews</h2>
-            {reviews.length === 0 ? (
-              <p className="text-gray-500">Belum ada review.</p>
-            ) : (
-              <div className="space-y-4">
-                {reviews.map((r) => (
-                  <div
-                    key={r.id}
-                    className="border border-gray-400 rounded-lg p-4 bg-white"
-                  >
-                    <div className="flex items-center gap-1 mb-2">
-                      {/* Menampilkan bintang sesuai rating */}
-                      {[...Array(r.rating)].map((_, i) => (
-                        <span key={i} className="text-yellow-500 text-lg">
-                          ★
-                        </span>
-                      ))}
-                      {[...Array(5 - r.rating)].map((_, i) => (
-                        <span key={i} className="text-gray-300 text-lg">
-                          ★
-                        </span>
-                      ))}
-                    </div>
-                    <p className="text-gray-800">{r.review}</p>
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
-        </section>
+    setSelectedTarget(target);
+  };
 
-        {/* Bagian Kanan: Form Input Review */}
-        <section className="w-80 border border-gray-400 rounded-lg p-4">
-          <h2 className="text-lg font-bold mb-3">Reviews</h2>
-          
-          {/* Form Rating & Review */}
-          <form onSubmit={handleSubmit}>
-            <div className="mb-4">
-              <label className="block font-bold mb-1">Rating:</label>
-              <div className="flex gap-1 text-2xl mb-2">
-                {/* Menampilkan 5 bintang untuk rating */}
-                {[1, 2, 3, 4, 5].map((star) => (
-                  <button
-                    type="button"
-                    key={star}
-                    onClick={() => setRating(star)}
-                    className={
-                      star <= rating ? "text-yellow-500" : "text-gray-300"
-                    }
-                  >
-                    ★
-                  </button>
-                ))}
-              </div>
+  // Format harga
+  const formatPrice = (price) => {
+    return new Intl.NumberFormat("id-ID").format(price);
+  };
+
+  // Harga saat ini
+  const totalPrice = selectedTarget?.price || 0;
+
+  // Tombol pesan
+  const handleOrder = (e) => {
+    e.preventDefault();
+
+    if (!selectedService) {
+      alert("Silakan pilih jenis layanan.");
+      return;
+    }
+
+    if (!selectedTarget) {
+      alert("Silakan pilih target proses.");
+      return;
+    }
+
+    if (!email.trim()) {
+      alert("Silakan masukkan email.");
+      return;
+    }
+
+    if (!password.trim()) {
+      alert("Silakan masukkan password.");
+      return;
+    }
+
+    console.log({
+      game: product.name,
+      service: selectedService.name,
+      target: selectedTarget.name,
+      email,
+      password,
+      note,
+      price: totalPrice,
+    });
+
+    alert("Pesanan berhasil dibuat!");
+  };
+
+  if (!product) {
+    return (
+      <div>
+        <Navbar />
+
+        <div className="p-6 text-center">
+          <h1 className="text-xl font-bold">
+            Produk tidak ditemukan
+          </h1>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="min-h-screen bg-[#15131b] text-white">
+      <Navbar />
+
+      <div className="p-6">
+        <div className="max-w-4xl mx-auto">
+
+          {/* CARD UTAMA */}
+          <form
+            onSubmit={handleOrder}
+            className="border border-gray-700 rounded-xl p-6 bg-[#1d1a24] shadow-lg"
+          >
+
+            {/* NAMA GAME */}
+            <p className="text-purple-400 font-bold uppercase tracking-wide">
+              {product.name}
+            </p>
+
+            {/* JUDUL */}
+            <h1 className="text-3xl font-bold mt-2">
+              {selectedService?.name || "Pilih Layanan"}
+            </h1>
+
+            {/* GARIS */}
+            <div className="border-b border-gray-700 my-6"></div>
+
+            {/* DESKRIPSI */}
+            <div className="mb-8">
+              <h2 className="text-sm font-bold text-gray-400 uppercase mb-2">
+                Deskripsi
+              </h2>
+
+              <p className="text-gray-300">
+                {selectedService?.description ||
+                  "Silakan pilih jenis layanan."}
+              </p>
             </div>
 
-            <div className="mb-4">
-              <label className="block font-bold mb-1">Review:</label>
-              {/* Textarea untuk review */}
+            {/* JENIS LAYANAN */}
+            <div className="mb-6">
+              <label className="block text-sm font-bold text-gray-300 mb-2">
+                Pilih Jenis Layanan
+              </label>
+
+              <select
+                value={selectedService?.id || ""}
+                onChange={handleServiceChange}
+                className="w-full bg-[#111016] border border-gray-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500"
+              >
+                {product.services.map((service) => (
+                  <option
+                    key={service.id}
+                    value={service.id}
+                  >
+                    {service.name}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            {/* TARGET */}
+            <div className="mb-6">
+              <label className="block text-sm font-bold text-gray-300 mb-2">
+                Target Proses
+              </label>
+
+              <select
+                value={selectedTarget?.id || ""}
+                onChange={handleTargetChange}
+                className="w-full bg-[#111016] border border-gray-600 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-purple-500"
+              >
+                <option value="">
+                  Pilih Target
+                </option>
+
+                {selectedService?.targets.map((target) => (
+                  <option
+                    key={target.id}
+                    value={target.id}
+                  >
+                    {target.name} - Rp
+                    {formatPrice(target.price)}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            {/* EMAIL */}
+            <div className="mb-6">
+              <label className="block text-sm font-bold text-gray-300 mb-2">
+                Email
+              </label>
+
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Masukkan email akun"
+                className="w-full bg-[#111016] border border-gray-600 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-purple-500"
+              />
+            </div>
+
+            {/* PASSWORD */}
+            <div className="mb-6">
+              <label className="block text-sm font-bold text-gray-300 mb-2">
+                Password
+              </label>
+
+              <input
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="Masukkan password akun"
+                className="w-full bg-[#111016] border border-gray-600 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-purple-500"
+              />
+            </div>
+
+            {/* CATATAN */}
+            <div className="mb-6">
+              <label className="block text-sm font-bold text-gray-300 mb-2">
+                Catatan Tambahan (Opsional)
+              </label>
+
               <textarea
-                value={review}
-                onChange={(e) => setReview(e.target.value)}
-                className="w-full border border-gray-400 rounded-lg p-3 text-sm focus:outline-none"
+                value={note}
+                onChange={(e) => setNote(e.target.value)}
                 rows="4"
-                placeholder="Tulis pengalaman Anda..."
+                placeholder="Tuliskan login method (Google/FB/Kuro/HoYoverse) atau instruksi khusus lainnya..."
+                className="w-full bg-[#111016] border border-gray-600 rounded-lg px-4 py-3 text-white placeholder-gray-500 resize-none focus:outline-none focus:border-purple-500"
               ></textarea>
             </div>
 
+            {/* TOTAL HARGA */}
+            <div className="border border-gray-700 rounded-xl bg-[#27232e] p-5 mb-5">
+              <div className="flex items-center justify-between">
+
+                <div>
+                  <p className="text-sm text-gray-300">
+                    Total Biaya
+                  </p>
+
+                  <p className="text-xs text-gray-500 mt-1">
+                    Sudah termasuk garansi keamanan
+                  </p>
+                </div>
+
+                <p className="text-2xl font-bold">
+                  Rp{formatPrice(totalPrice)}
+                </p>
+
+              </div>
+            </div>
+
+            {/* TOMBOL */}
             <button
               type="submit"
-              className="px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg font-medium"
+              className="w-full py-3 rounded-xl bg-purple-600 hover:bg-purple-700 transition font-bold text-lg"
             >
-              Submit
+              🛒 Pesan Jasa
             </button>
+
           </form>
-        </section>
-      </div>
+        </div>
       </div>
     </div>
-  ); 
+  );
 }
