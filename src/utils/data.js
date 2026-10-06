@@ -1,7 +1,13 @@
+import Wuwa from "../assets/Wuwa-logo.jpg";
+import hsr from "../assets/hsr-logo.jpg";
+import zzz from "../assets/zzz-logo.jpg";
+import gi from "../assets/gi-logo.jpg";
+
 export const products = [
   {
     id: 1,
     name: "Wuthering Waves",
+    logo : Wuwa,
     image: "/images/Wuwa-bg.jpg",
 
     services: [
@@ -85,6 +91,7 @@ export const products = [
   {
     id: 2,
     name: "Honkai: Star Rail",
+    logo: hsr,
     image: "/images/hsr-bg.png",
 
     services: [
@@ -115,20 +122,54 @@ export const products = [
 
       {
         id: 2,
-        name: "Farming",
+        name: "Memory of Chaos Clear",
         description:
-          "Membantu farming material karakter dan kebutuhan akun.",
+          "Menyelesaikan Konten End Game Secara Cepat.",
 
         targets: [
           {
             id: 1,
-            name: "1 Jam",
+            name: "Ruangan 1 - 3",
             price: 15000,
           },
           {
             id: 2,
-            name: "3 Jam",
+            name: "Ruangan 4 - 6",
+            price: 20000,
+          },
+          {
+            id: 3,
+            name: "Ruangan 7 - 9",
+            price: 30000,
+          },
+          {
+            id: 4,
+            name: "Ruangan 10 - 12",
             price: 40000,
+          },
+        ],
+      },
+      {
+        id: 3,
+        name: "Simulated/Divergent Universe",
+        description:
+          "Pengerjaan Konten End Game Sampingan.",
+
+        targets: [
+          {
+            id: 1,
+            name: "Clear 1 Run",
+            price: 35000,                                         
+          },
+          {
+            id: 2,
+            name: "Clear Difficulty High",
+            price: 65000,
+          },
+          {
+            id: 3,
+            name: "Farming Planar Ornament",
+            price: 35000,
           },
         ],
       },
@@ -138,6 +179,7 @@ export const products = [
   {
     id: 3,
     name: "Zenless Zone Zero",
+    logo: zzz,
     image: "/images/zzz-bg.jpg",
 
     services: [
@@ -168,20 +210,49 @@ export const products = [
 
       {
         id: 2,
-        name: "Farming",
+        name: "Shiyu Defense",
         description:
-          "Membantu farming material dan kebutuhan karakter.",
+          "Membantu menyelesaikan stage Shiyu Defense.",
 
         targets: [
           {
             id: 1,
-            name: "1 Jam",
-            price: 15000,
+            name: "Stage 1 - 5",
+            price: 25000,
           },
           {
             id: 2,
-            name: "3 Jam",
+            name: "Stage 6 - 10",
             price: 40000,
+          },
+          {
+            id: 3,
+            name: "Stage Full Clear",
+            price: 60000,
+          },
+        ],
+      },
+      {
+        id: 3,
+        name: "Hollow Zero Routine",
+        description:
+          "Membantu menyelesaikan aktifitas Hollow Zero dan mendapatkan reward.",
+
+        targets: [
+          {
+            id: 1,
+            name: "1 Run",
+            price: 20000,
+          },
+          {
+            id: 2,
+            name: "3 Run",
+            price: 50000,
+          },
+          {
+            id: 3,
+            name: "Weekly Routine",
+            price: 75000,
           },
         ],
       },
@@ -191,6 +262,7 @@ export const products = [
   {
     id: 4,
     name: "Genshin Impact",
+    logo: gi,
     image: "/images/gi-bg.jpg",
 
     services: [
@@ -214,16 +286,36 @@ export const products = [
           {
             id: 3,
             name: "Inazuma",
+            price: 60000,
+          },
+          {
+            id: 4,
+            name: "Sumeru",
+            price: 68000,
+          },
+          {
+            id: 5,
+            name: "Fontaine",
             price: 75000,
+          },
+          {
+            id: 6,
+            name: "Natlan",
+            price: 75000,
+          },
+          {
+            id: 7,
+            name: "Nor Krai",
+            price: 50000,
           },
         ],
       },
 
       {
         id: 2,
-        name: "Farming",
+        name: "Farming/Artefak",
         description:
-          "Membantu farming material karakter dan kebutuhan akun.",
+          "Membantu farming material, equipment karakter dan kebutuhan akun.",
 
         targets: [
           {
@@ -234,7 +326,41 @@ export const products = [
           {
             id: 2,
             name: "3 Jam",
+            price: 24000,
+          },
+          {
+            id: 3,
+            name: "6 Jam",
             price: 40000,
+          },
+        ],
+      },
+      {
+        id: 3,
+        name: "Spiral Abyss",
+        description:
+          "Membantu menyelesaikan Spiral Abyss dengan cepat.",
+
+        targets: [
+          {
+            id: 1,
+            name: "Floor 1 - 3",
+            price: 32000,
+          },
+          {
+            id: 2,
+            name: "Floor 4 - 6",
+            price: 38000,
+          },
+          {
+            id: 3,
+            name: "Floor 7 - 9",
+            price: 45000,
+          },
+          {
+            id: 4,
+            name: "Floor 10 - 12",
+            price: 60000,
           },
         ],
       },

@@ -2,9 +2,12 @@ import { useState } from "react";
 import { useParams, useLocation } from "react-router-dom";
 import Navbar from "../../components/Navbar";
 import { products } from "../../utils/data";
+import { useCart } from "../../context/CartContext";
 export default function ProductDetail() {
   const { id } = useParams();
   const location = useLocation();
+  const { addToCart } = useCart();
+
 
   // Mencari game berdasarkan ID
   const product =
@@ -65,37 +68,30 @@ export default function ProductDetail() {
   const handleOrder = (e) => {
     e.preventDefault();
 
-    if (!selectedService) {
-      alert("Silakan pilih jenis layanan.");
+    if (!selectedService || !selectedTarget) {
+      alert("Silakan pilih layanan dan target terlebih dahulu.");
       return;
     }
 
-    if (!selectedTarget) {
-      alert("Silakan pilih target proses.");
+    if (!email || !password) {
+      alert("Email dan password harus diisi.");
       return;
     }
 
-    if (!email.trim()) {
-      alert("Silakan masukkan email.");
-      return;
-    }
-
-    if (!password.trim()) {
-      alert("Silakan masukkan password.");
-      return;
-    }
-
-    console.log({
+    addToCart({
+      id: `${product.id}-${selectedService.id}-${selectedTarget.id}`,
       game: product.name,
+      image: product.image,
+      logo: product.logo,
       service: selectedService.name,
       target: selectedTarget.name,
-      email,
-      password,
-      note,
-      price: totalPrice,
+      email: email,
+      password: password,
+      note: note,
+      price: selectedTarget.price,
     });
 
-    alert("Pesanan berhasil dibuat!");
+    alert("Pesanan berhasil ditambahkan!");
   };
 
   if (!product) {
@@ -113,7 +109,7 @@ export default function ProductDetail() {
   }
 
   return (
-    <div className="min-h-screen bg-[#15131b] text-white">
+    <div className="min-h-screen bg-[#15131b] text-white bg-gradient-to-r from-[#8b8b50] via-[#484351] to-[#201b29]">
       <Navbar />
 
       <div className="p-6">
@@ -122,11 +118,11 @@ export default function ProductDetail() {
           {/* CARD UTAMA */}
           <form
             onSubmit={handleOrder}
-            className="border border-gray-700 rounded-xl p-6 bg-[#1d1a24] shadow-lg"
+            className="border border-gray-700 rounded-xl p-6 bg-[#1d1a24] shadow-lg  bg-gradient-to-r from-[#4b4b30] via-[#2e2a36] to-[#201c29]"
           >
 
             {/* NAMA GAME */}
-            <p className="text-purple-400 font-bold uppercase tracking-wide">
+            <p className="text-white font-bold uppercase tracking-wide">
               {product.name}
             </p>
 
@@ -136,7 +132,7 @@ export default function ProductDetail() {
             </h1>
 
             {/* GARIS */}
-            <div className="border-b border-gray-700 my-6"></div>
+            <div className="border-b border-white my-6"></div>
 
             {/* DESKRIPSI */}
             <div className="mb-8">
@@ -268,9 +264,9 @@ export default function ProductDetail() {
             {/* TOMBOL */}
             <button
               type="submit"
-              className="w-full py-3 rounded-xl bg-purple-600 hover:bg-purple-700 transition font-bold text-lg"
+              className="w-full bg-white text-black py-3 rounded-lg font-semibold hover:bg-gray-200 transition"
             >
-              🛒 Pesan Jasa
+              Pesan Jasa
             </button>
 
           </form>

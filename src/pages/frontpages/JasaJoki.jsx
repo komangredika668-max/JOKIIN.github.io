@@ -9,12 +9,12 @@ import gi from "../../assets/gi-logo.jpg";
 export default function JasaJoki() {
 
     return (
-        <div className="flex flex-col min-h-screen bg-gradient-to-r from-[#8b8b50] via-[#484351] to-[#201b29]">
+        <div className="flex flex-col min-h-screen bg-gradient-to-r from-[#8b8b50] via-[#484351] to-[#201b29] ">
             <Navbar />
 
             <div className="h-full mx-[80px] bg-gradient-to-r from-[#6b6b47] via-[#484351] to-[#292436]">
 
-                <div className="text-center border-4-black mx-[80px] h-[850px] px-[30px] mt-12 mb-8 rounded-xl drop-shadow-md text-white bg-gradient-to-r from-[#4b4b30] via-[#2e2a36] to-[#201c29]">
+                <div className="overflow-hidden text-center border-4-black mx-[80px] h-[850px] px-[30px] mt-12 mb-8 rounded-xl drop-shadow-md text-white bg-gradient-to-r from-[#4b4b30] via-[#2e2a36] to-[#201c29]">
 
                     {/* Judul */}
                     <div className="relative text-left px-6 pt-8">
@@ -58,23 +58,24 @@ export default function JasaJoki() {
 
                                 <div className="flex justify-between text-[14px] font-semibold">
                                     <span>Story Quest</span>
+                                    <span>Rp.30.000 - 75.000</span>
                                 </div>
 
                                 <div className="flex justify-between text-[14px] font-semibold">
-                                    <span>Exploration 100%</span>
-                                    <span>Rp40.000</span>
+                                    <span>Daily Login</span>
+                                    <span>Rp.10.000 - 50.000</span>
                                 </div>
 
                                 <div className="flex justify-between text-[14px] font-semibold">
                                     <span>Farming Material</span>
-                                    <span>Rp30.000</span>
+                                    <span>Rp15.000 - 60.000</span>
                                 </div>
 
                             </div>
 
                             <Link 
                             to="/product/1"
-                            className="bg-white text-black font-semibold flex justify-center h-[40px] my-8 items-center rounded-[10px]">
+                            className="bg-white border-purple-500 text-black font-semibold flex justify-center h-[40px] my-8 items-center rounded-[10px]">
                                 Lihat Detail
                             </Link>
 
@@ -106,17 +107,17 @@ export default function JasaJoki() {
 
                                 <div className="flex justify-between text-[14px] font-semibold">
                                     <span>Story Commission</span>
-                                    <span>Rp50.000</span>
+                                    <span>Rp30.000 - 90.000</span>
                                 </div>
 
                                 <div className="flex justify-between text-[14px] font-semibold">
                                     <span>Shiyu Defense Clear</span>
-                                    <span>Rp45.000</span>
+                                    <span>Rp25.000 - 60.000</span>
                                 </div>
 
                                 <div className="flex justify-between text-[14px] font-semibold">
                                     <span>Hollow Zero Routine</span>
-                                    <span>Rp35.000</span>
+                                    <span>Rp15.000 - 70.000</span>
                                 </div>
 
                             </div>
@@ -155,17 +156,17 @@ export default function JasaJoki() {
 
                                 <div className="flex justify-between text-[14px] font-semibold">
                                     <span>Story Progress (Archon Quest)</span>
-                                    <span>Rp50.000</span>
+                                    <span>Rp30.000 - 75.000</span>
                                 </div>
 
                                 <div className="flex justify-between text-[14px] font-semibold">
                                     <span>Farming Material & Artifact</span>
-                                    <span>Rp30.000</span>
+                                    <span>Rp15.000 - 40.000</span>
                                 </div>
 
                                 <div className="flex justify-between text-[14px] font-semibold">
                                     <span>Spiral Abyss Floor 9-12</span>
-                                    <span>Rp40.000</span>
+                                    <span>Rp32.000 - 60.000</span>
                                 </div>
 
                             </div>
@@ -204,17 +205,17 @@ export default function JasaJoki() {
 
                                 <div className="flex justify-between text-[14px] font-semibold">
                                     <span>Trailblaze Mission Story</span>
-                                    <span>Rp50.000</span>
+                                    <span>Rp30.000 - 100.000</span>
                                 </div>
 
                                 <div className="flex justify-between text-[14px] font-semibold">
                                     <span>Memory of Chaos Clear</span>
-                                    <span>Rp40.000</span>
+                                    <span>Rp15.000 - 40.000</span>
                                 </div>
 
                                 <div className="flex justify-between text-[14px] font-semibold">
                                     <span>Simulated / Divergent Universe</span>
-                                    <span>Rp35.000</span>
+                                    <span>Rp35.000 - 65.000</span>
                                 </div>
 
                             </div>
