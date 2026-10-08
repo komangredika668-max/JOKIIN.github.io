@@ -6,6 +6,7 @@ import { useCart } from "../../context/CartContext";
 export default function ProductDetail() {
   const { id } = useParams();
   const location = useLocation();
+  
   const { addToCart } = useCart();
 
 

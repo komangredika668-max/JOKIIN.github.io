@@ -97,7 +97,7 @@ export default function Dashboard() {
                 <h1>Farming Material</h1>
               </div>
               <div className="mt-2 text-blue-100">
-                <p>Penuntasan misi story utama & sampingan cepat tanpa lelah, anda bisa request penyelesaian story sesuai dengan keinginan anda.</p>
+                <p>Farming material karakter atau senjata cepat tanpa ribet anda bisa request material dan jumlah sesuai kebutuhan akun anda.</p>
               </div>
               <div className="mt-4 py-2 text-[18px] text-blue-100 border-t border-white/10">
                 <p>Harga paketan atau menyesuaikan dengan request anda</p>
@@ -118,6 +118,82 @@ export default function Dashboard() {
               </div>
               <div className="mt-4 py-2 text-[18px] text-blue-100 border-t border-white/10">
                 <p>Harga paketan atau menyesuaikan dengan request anda</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="text-white mt-[12px]">
+        <h1 className="text-[45px] font-bold mb-2 pt-4">
+          Cara Memesan
+        </h1>
+      
+      {/*Cara Pemesanan*/}
+        <p className="text-[20px] mb-5 font-semibold">
+          Proses simpel dan transparan dalam 4 langkah mudah
+        </p>
+        <div className="flex justify-center overflow-hidden h-[280px] gap-[40px] items-center px-[30px] rounded-xl drop-shadow-md text-white bg-gradient-to-r from-[#4b4b30] via-[#2e2a36] to-[#201c29]">
+          {/*Border 1 */}
+          <div className="border-2 rounded-xl h-[200px] w-[250px]">
+            <div className="flex items-center justify-center mr-7">
+            <div className="border border-purple-400 text-xl text-white bg-purple-500 h-[40px] w-[40px] font-semibold rounded-full mt-6 ml-6 flex items-center justify-center ">
+              <span>1</span>
+              </div>
+            </div>
+            <div className="px-6">
+              <div className="mt-2 font-bold text-[20px] text-center">
+                <h1>Pilih Game</h1>
+              </div>
+              <div className="mt-2 text-blue-100 text-center text-[14px]">
+                <span>Tentukan game yang ingin anda jokikan.</span>
+              </div>
+            </div>
+          </div>
+          {/*Border 2 */}
+          <div className="border-2 rounded-xl h-[200px] w-[250px]">
+            <div className="flex items-center justify-center mr-7">
+            <div className="border border-purple-400 text-xl text-white bg-purple-500 h-[40px] w-[40px] font-semibold rounded-full mt-6 ml-6 flex items-center justify-center ">
+              <span>2</span>
+              </div>
+            </div>
+            <div className="px-6">
+              <div className="mt-2 font-bold text-[20px] text-center">
+                <h1>Pilih Jasa</h1>
+              </div>
+              <div className="mt-2 text-blue-100 text-center text-[14px]">
+                <p>Pilih Kategori & paket layanan yang anda butuhkan.</p>
+              </div>
+            </div>
+          </div>
+          {/*Border 3 */}
+          <div className="border-2 rounded-xl h-[200px] w-[250px]">
+            <div className="flex items-center justify-center mr-7">
+            <div className="border border-purple-400 text-xl text-white bg-purple-500 h-[40px] w-[40px] font-semibold rounded-full mt-6 ml-6 flex items-center justify-center ">
+              <span>3</span>
+              </div>
+            </div>
+            <div className="px-6">
+              <div className="mt-2 font-bold text-[20px] text-center">
+                <h1>Isi Detail</h1>
+              </div>
+              <div className="mt-2 text-blue-100 text-center text-[14px]">
+                <p>Masukan data akun, target, dan catatan khusus.</p>
+              </div>
+            </div>
+          </div>
+           {/*Border 4 */}
+          <div className="border-2 rounded-xl h-[200px] w-[250px]">
+            <div className="flex items-center justify-center mr-7">
+            <div className="border border-purple-400 text-xl text-white bg-purple-500 h-[40px] w-[40px] font-semibold rounded-full mt-6 ml-6 flex items-center justify-center ">
+              <span>4</span>
+              </div>
+            </div>
+            <div className="px-6">
+              <div className="mt-2 font-bold text-[20px] text-center">
+                <h1>Pesanan Diproses</h1>
+              </div>
+              <div className="mt-2 text-blue-100 text-center text-[14px]">
+                <p>Joki pengerjaan langsung jalan secara cepat.</p>
               </div>
             </div>
           </div>
